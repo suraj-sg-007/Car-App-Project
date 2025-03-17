@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/sign_in.css">
+    <link rel="Option" href="option.html">
+    <title>Sign in page</title>
+</head>
+<body>
+    <form action="/adminsign_in" method="POST">
+        <div class="container">
+          <h1>Login</h1>
+          <hr>
+      
+          <label for="email"><b>Email</b></label>
+          <input type="text" placeholder="Enter Email" name="email" id="email" required>
+      
+          <label for="psw"><b>Password</b></label>
+          <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
+    
+          <button type="submit" class="loginbtn">Login</button>
+        </div>
+    </form>
+</body>
+</html>

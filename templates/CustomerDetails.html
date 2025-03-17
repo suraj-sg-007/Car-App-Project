@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Details</details></title>
+       
+    <style>
+        :root{
+            background-color: rgb(214, 248, 153);
+            background-image: url(download.png);
+            height: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        h1 {
+            color: rgb(18, 19, 18);
+        }
+        .container {
+            padding: 15px;
+            width: 400px;
+        }
+         
+        label,
+        input {
+            margin-bottom: 10px;
+        }
+         
+        button {
+            float: right;
+            margin-right: 10px;
+            background-color: rgb(192, 118, 39);
+        }
+    </style>
+</head>
+ 
+<body>
+    <center>
+        <h1>Enter the following details :</h1>
+        
+        
+        <div class="container">
+            <div>
+                <label>Name :</label>
+                <input type="text" placeholder="Enter your name" size="40">
+            </div>
+            <div>
+                <form id="ageForm">
+                <label>Age :</label>
+                <input type="number" placeholder="Your age" id="age" name="age" min="1" required size="40">
+                <p class="error-message" id="errorMessage" style="display: none;">You must be 18 or older to proceed.</p>
+                </form>
+            </div>
+            <div>
+                <label>Licence No :</label>
+                <input type="text" placeholder="Enter LicenceNo" size="40">
+            </div>
+            <div>
+                <label>Email :</label>
+                <input type="text" placeholder="Email" size="40">
+            </div>
+            <div>
+                <label>Phone no:</label>
+                <input type="text" placeholder="Phone no" id="number" size="40">
+                <span id="error"></span>
+            </div>
+
+            <a href="BillDetails.html">
+            <button type="submit"
+                    onclick="errorMessage()">
+                Submit
+                 
+                <!-- <a href="CustomerDetails.html"> -->
+                    <!-- <button type="button" onclick="CustomerDetails.html" class="btn">Submit</button>
+                    </a> -->
+
+
+            </button>
+        </div>
+    </center>
+</body>
+<script>
+    function errorMessage() {
+        var error = document.getElementById("error")
+        if (isNaN(document.getElementById("number").value)) 
+        {
+             
+            // Changing content and color of content
+            error.textContent = "Please enter a valid number"
+            error.style.color = "red"
+        } else {
+            error.textContent = ""
+        }
+    }
+</script>
+<script>
+    document.getElementById("ageForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+        var age = parseInt(document.getElementById("age").value);
+        var errorMessage = document.getElementById("errorMessage");
+        
+        if (age < 18) {
+            errorMessage.style.display = "block";
+        }
+    });
+</script>
+ 
+</html>

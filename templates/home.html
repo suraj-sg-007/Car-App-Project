@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/option.css">
+    <title>Choose car</title>
+</head>
+<body>
+    <section class="section featured-car">
+        <div class="container">
+            <div class="title-wrapper">
+                <h2 class="section-title">Our Cars</h2>
+                <a href="#" class="featured-car-link">
+                    <ion-icon name="arrow-forward-outline"></ion-icon>
+                </a>
+		{% if tasks | length < 1%}
+    		<h3>No cars are available at this moment</h3>
+    		{% else %}
+            </div>
+            <ul class="featured-car-list">
+		{% for task in tasks%}
+                <li>
+                    <div class="featured-car-card">
+                        <figure class="card-banner">
+                            <img src="/static/car-1.jpg" alt="Mini Car" loading="lazy" width="440" height="300">
+                        </figure>
+                        <div class="card-content">
+                            <div class="card-title-wrapper">
+                                <h3 class="card-title"><a href="#">{{task[1]}}</a></h3>
+                            </div>
+                            <ul class="card-list">
+                                <li class="card-list-item">
+                                    <ion-icon name="people-outline"></ion-icon>
+                                    <span class="card-item-text">{{task[2]}} people</span>
+                                </li>
+                                <li class="card-list-item">
+                                    <ion-icon name="flash-outline"></ion-icon>
+                                </li>
+                            </ul>
+                            <div class="card-price-wrapper">
+                                <p class="card-price"><strong>{{task[3]}}</strong> / day</p>
+                                <a href="/bookingDetails/{{task[0]}}" class="btn">Rent Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+		{% endfor %}
+                <!-- Repeat similar structure for other cars -->
+            </ul>
+		{% endif %}
+        </div>
+    </section>
+</body>
+</html>

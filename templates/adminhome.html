@@ -1,0 +1,94 @@
+{% extends 'base.html'%}
+
+{% block head %}
+<title>page</title>
+{% endblock %}
+
+{% block body%}
+<div class="content">
+    <h1>Car Rental</h1>
+
+    {% if tasks | length < 1%}
+    <h3>No cars are available at this moment</h3>
+    {% else %}
+
+    <table>
+    <tr>
+        <th>vehicle</th>
+        <th>Seat</th>
+        <th>Added</th>
+        <th>Actions</th>
+    </tr>
+
+    {% for task in tasks%}
+    <tr>
+        <div class="featured-car-card">
+
+            <figure class="card-banner">
+              <img src="/static/car-1.jpg" alt="Mini Car" loading="lazy" width="440" height="300"
+                class="w-100">
+                </figure>
+
+                <div class="card-content">
+
+                  <div class="card-title-wrapper">
+                    <h3 class="h3 card-title">
+                    <a href="#">{{task[1]}}</a>
+                    </h3>
+
+                  </div>
+
+                <ul class="card-list">
+
+                <li class="card-list-item">
+                  <ion-icon name="people-outline"></ion-icon>
+
+                  <span class="card-item-text">{{task[2]}}</span>
+                </li>
+
+                <li class="card-list-item">
+                  <ion-icon name="flash-outline"></ion-icon>
+
+                </li>
+
+                <li class="card-list-item">
+                  <ion-icon name="hardware-chip-outline"></ion-icon>
+
+                  <span class="card-item-text"></span>
+                </li>
+
+              </ul>
+
+              <div class="card-price-wrapper">
+
+                <p class="card-price">
+                  <strong>{{task[3]}}</strong> / day
+                </p>
+
+                </button>
+
+                <!-- <button class="btn">Rent now</button> -->
+
+                
+
+              </div>
+
+            </div>
+
+          </div>
+       
+        </td>
+    </tr>
+    {% endfor %}
+
+    </table>
+    {% endif %}
+    <form action="/adminhome" method="POST">
+      <input type="text" name="content" id="content" />
+      <input type="number" name="seat" id="seat">
+      <input type="number" name="price" id="price">
+      <input type="submit" value="Add vehicle" id="btn_add" />
+  </form>
+    
+</div>
+{% endblock %}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/register.css">
+    <link rel="Car Choose" href="option.html">
+    <title>Registration Page</title>
+</head>
+<body>
+    <form action="/register" method="POST">
+        <div class="container">
+
+          {% if tasks | length >= 1%}
+          <h3>{{tasks}}</h3>
+          {% endif %}
+
+          <p>Create an account.</p>
+          
+          <h1>Register</h1>
+          <p>Create an account.</p>
+          <hr>
+      
+          <label for="email"><b>Email</b></label>
+          <input type="text" placeholder="Enter Email" name="email" id="email" required>
+      
+          <label for="psw"><b>Password</b></label>
+          <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
+      
+          <label for="psw-repeat"><b>Repeat Password</b></label>
+          <input type="password" placeholder="Repeat Password" name="psw-repeat" id="psw-repeat" required>
+          <hr>
+          
+              <button type="submit" class="registerbtn">Register</button>
+              
+
+        </div>
+      
+        <div class="container signin">
+            <a href = "/sign_in">
+          <p>Already have an account? <a href="#">Sign in</a>.</p></a>
+        </div>
+      </form>
+
+
+</body>
+</html>
