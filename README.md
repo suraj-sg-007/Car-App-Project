@@ -1,7 +1,7 @@
 # Car Rental Platform
 
 ## Overview
-A **Car Rental Platform** built using **HTML, CSS, MySQL**, and containerized with **Docker**. This project allows users to browse, book, and manage car rentals efficiently.
+A **Car Rental Platform** built using **Python, HTML, CSS, MySQL**, and containerized with **Docker**. This project allows users to browse, book, and manage car rentals efficiently.
 
 ## Features
 - User authentication (Sign up/Login)
@@ -12,7 +12,7 @@ A **Car Rental Platform** built using **HTML, CSS, MySQL**, and containerized wi
 
 ## Technologies Used
 - **Frontend:** HTML, CSS
-- **Backend:** MySQL (Database)
+- **Backend:** Python, MySQL (Database)
 - **Containerization:** Docker
 
 ## Installation
@@ -48,12 +48,6 @@ docker build -t car-rental .
 docker run -p 5000:5000 car-rental
 ```
 
-## Contributing
-1. Fork the repository.
-2. Create a new branch (`feature-branch`).
-3. Commit your changes (`git commit -m 'Add new feature'`).
-4. Push to the branch (`git push origin feature-branch`).
-5. Create a Pull Request.
 
 
 
