@@ -1,62 +1,66 @@
-# Rental Platform
+# Car Rental Platform
 
-A rental platform where users can browse, book, and manage rental services. Built using **HTML, CSS, MySQL**, and **Docker**.
+## Overview
+A **Car Rental Platform** built using **HTML, CSS, MySQL**, and containerized with **Docker**. This project allows users to browse, book, and manage car rentals efficiently.
 
 ## Features
-- User authentication (login/signup)
-- Browse available rentals
-- Book and manage reservations
-- Admin dashboard for managing rentals
-- Responsive UI
+- User authentication (Sign up/Login)
+- Search and filter cars by model, price, and availability
+- Booking system with date selection
+- Admin panel for managing cars and bookings
+- Responsive UI with modern design
 
 ## Technologies Used
-- **Frontend**: HTML, CSS
-- **Backend**: Flask (Python) / PHP / Node.js *(mention the one you used)*
-- **Database**: MySQL
-- **Containerization**: Docker
+- **Frontend:** HTML, CSS
+- **Backend:** MySQL (Database)
+- **Containerization:** Docker
 
 ## Installation
 ### Prerequisites
-- Install [Docker](https://www.docker.com/get-started)
-- Install MySQL *(if running without Docker)*
+Ensure you have the following installed:
+- **Docker**
+- **MySQL Server**
 
-### Setup
+### Steps to Run Locally
 1. Clone the repository:
-   ```bash
-   git clone https://github.com/your-username/rental-platform.git
-   cd rental-platform
+   ```sh
+   git clone https://github.com/yourusername/car-rental-platform.git
+   cd car-rental-platform
    ```
-2. Setup database:
-   - If using Docker, skip to the Docker section below.
-   - If using MySQL locally:
-     ```sql
-     CREATE DATABASE rental_db;
-     ```
-3. Configure `.env` file (if applicable) with database credentials.
-
-## Running with Docker
-1. Build and start the container:
-   ```bash
-   docker-compose up --build -d
+2. Run the MySQL database server.
+3. Set up the database:
+   - Import the provided SQL file (`database.sql`) into MySQL.
+4. Start the project using Docker:
+   ```sh
+   docker-compose up --build
    ```
-2. Access the platform at `http://localhost:5000` (or the port you configured).
+5. Open your browser and go to:
+   ```
+   http://localhost:5000
+   ```
 
-## Deployment
-- Can be deployed using AWS/GCP/Azure
-- Use `docker-compose up` for production setup
+## Docker Setup
+A **Dockerfile** is included to containerize the application.
+
+### Build and Run the Docker Container
+```sh
+docker build -t car-rental .
+docker run -p 5000:5000 car-rental
+```
 
 ## Contributing
-1. Fork the repo
-2. Create a feature branch (`git checkout -b feature-name`)
-3. Commit changes (`git commit -m 'Added new feature'`)
-4. Push to your branch (`git push origin feature-name`)
-5. Create a Pull Request
+1. Fork the repository.
+2. Create a new branch (`feature-branch`).
+3. Commit your changes (`git commit -m 'Add new feature'`).
+4. Push to the branch (`git push origin feature-branch`).
+5. Create a Pull Request.
 
 ## License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the **MIT License**.
 
----
+## Contact
+For any queries, feel free to reach out!
+- **Email:** your.email@example.com
+- **GitHub:** [yourusername](https://github.com/yourusername)
 
-### Need Help?
-Feel free to raise an issue or contact me!
 
